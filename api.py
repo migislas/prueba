@@ -1,5 +1,7 @@
-# flask_web/app.py
-
+"""
+Este programa es una api para calcular la viabilidad de una casa dada su latit, longitud, tamaño de terreno,
+tamaño de casa, costo del inmueble. El modelo solo funciona por el momento en cdmx.
+"""
 from flask import Flask
 from flask import request
 from flask import jsonify
