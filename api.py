@@ -1,6 +1,15 @@
 """
 Este programa es una api para calcular la viabilidad de una casa dada su latit, longitud, tamaño de terreno,
 tamaño de casa, costo del inmueble. El modelo solo funciona por el momento en cdmx.
+
+La url para mandar la informacion  debe ser de la siguiente forma:
+0.0.0.0:5000/datos?long=-99.159155&lat=19.384338&cons=120&val=5500000&terr=100
+donde  
+    long es longitud
+    lat latitud
+    cons construccion
+    val valor
+    terr terreno
 """
 from flask import Flask
 from flask import request
@@ -12,7 +21,7 @@ from shapely.geometry import Point, Polygon
 
 app = Flask(__name__)
 radio = 5000 #5km
-#0.0.0.0:4000/datos?long=-99.159155&lat=19.384338&cons=120&val=5500000&terr=100
+
 def checar_flotado(valor):
     """Checamos que se pueda convertir a floats
     Si se puede retorna el string como float, si no
